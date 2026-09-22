@@ -1,0 +1,22 @@
+Skill: skill
+Overall: 3.7 / 5
+
+The competitor-analysis skill provides highly structured instructions, strict language rules, and comprehensive output templates. It excels at guiding data confidence tagging and handling missing information explicitly. However, it lacks concrete end-to-end example interactions, explicit robustness rules for web search tool failures, and guardrails against prompt injection when reading external web content.
+
+Instruction Clarity: 5 / 5
+  Instructions are exceptionally clear and well-structured, featuring explicit MUST and MUST NOT rules, clear scope definitions, and forbidden language tables. Output formats are thoroughly specified with markdown templates and exact tag definitions like Confirmed, Estimated, and Inferred.
+Behavioral Completeness: 4 / 5
+  The workflow outlines an eight-step lifecycle from scoping to file output using dated filenames. It specifies fallbacks for missing user inputs and missing competitor data, though it lacks step-by-step handling for tool-level web search failures.
+Example Quality: 3 / 5
+  The skill provides structural templates for output formats, but lacks full end-to-end interaction examples with realistic sample input and populated output. The provided trigger example is brief and conceptual rather than a detailed walkthrough.
+Robustness: 3 / 5
+  The skill establishes clear rules for tagging missing data and distinguishing estimated from confirmed figures. However, it does not anticipate technical web research failure modes such as network timeouts, rate limits, or empty search result pages.
+Safety And Guardrails: 3 / 5
+  Ethical boundaries explicitly restrict research to public sources and prohibit credential stuffing or unauthorized access. However, it lacks prompt injection safeguards for untrusted external text retrieved from web searches.
+User Experience: 4 / 5
+  Frontmatter triggers and required inputs are well defined, with smart defaults when scope or competitors are omitted. Prerequisites and language rules are presented transparently to guide consistent user interactions.
+
+Top improvements
+1. SKILL.md: Add concrete end-to-end usage examples showing a full user request paired with a completed, populated report containing citations and confidence tags.
+2. SKILL.md: Include operational fallback instructions for web research failures, such as retries, alternative query formatting, or handling empty search results.
+3. SKILL.md: Add prompt-injection defenses and content sanitization instructions for ingesting and summarizing untrusted third-party website content.
